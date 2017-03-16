@@ -4,7 +4,7 @@ MAINTAINER Cameron Brunner <brunner@univa.com>
 
 # will ease up the update process
 # updating this env variable will trigger the automatic build of the Docker image
-ENV PANDOC_VERSION "1.16.0.2"
+ENV PANDOC_VERSION "1.18"
 
 # install pandoc
 RUN cabal update && cabal install pandoc-${PANDOC_VERSION}
@@ -18,6 +18,7 @@ RUN apt-get update -y \
     texlive-latex-extra \
     texlive-fonts-extra \
     texlive-bibtex-extra \
+    lmodern \
     fontconfig
 
 WORKDIR /source
